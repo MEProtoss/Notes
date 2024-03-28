@@ -131,7 +131,7 @@ docker exec -it nginx bash
 1. 编写`Dockerfile` 文件，其对应的语法可以参考官方文档：[官方文档](https://docs.docker.com/engine/reference/builder/)
 2. 构建镜像
 
-```shell
+```bash
 # 进入镜像目录
 cd /root/demo
 # 开始构建
