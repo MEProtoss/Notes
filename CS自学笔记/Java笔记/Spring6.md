@@ -2,12 +2,131 @@
 
 # Spring
 
+## Spring启示录
+
+### OCP开闭原则
+
+在软件开发过程中应当对扩展开放，对修改关闭
+
+### 依赖倒置
+- Dependence Inversion Principle(DIP) 
+
+- 要倡导面向抽象编程，面向接口编程，不要面向具体编程，让上层不再依赖下层，下面改动了，上面的代码不会受到牵连。这样可以大大降低程序的耦合度，耦合度低了，扩展力就强了，同时代码复用性也会增强。（软件七大开发原则都是在为解耦合服务）
+
+- Spring框架可以帮助我们创建对象，并且可以帮助我们维护对象和对象之间的关系
+
 - Spring其实就是一个管理Bean对象的工厂
 
-流程
+### 控制反转
 
-- [ ] 添加注解 将类纳入spring管理。
-- [ ]
+- Inversion of Control(IoC)
+
+控制反转的核心是：将对象的创建权交出去，将对象和对象之间关系的管理权交出去，由第三方容器来负责创建与维护。
+
+- 控制反转常见的实现方式：依赖注入（Dependency Injection，简称DI。
+
+## Spring概述
+spring = IOC + AOP(面向切面编程)
+
+### Spring8大模块
+### Spring 特点
+
+1. 轻量
+  a. 小
+  b. 非侵入式：Spring应用中的对象不依赖于Spring的特定类，也就是说 我们自己创建的对象不依赖spring容器
+2. IoC
+3. 面向切面(AOP)
+4. 容器
+    Spring包含并管理应用对象的配置和生命周期，在这个意义上它是一种容器，你可以配置你的每个bean如何被创建——基于一个可配置原型（prototype），你的bean可以创建一个单独的实例或者每次需要时都生成一个新的实例——以及它们是如何相互关联的。
+5. 框架
+    Spring可以将简单的组件配置、组合成为复杂的应用。在Spring中，应用对象被声明式地组合，典型地是在一个XML文件里。Spring也提供了很多基础功能（事务管理、持久化框架集成等等），将应用逻辑的开发留给了你。
+
+## Spring 入门程序
+
+### 第一个Spring程序
+
+- Spring的配置文件：beans.xml 放在类的根路径下。
+配置文件中进行bean的配置
+  - id属性：代表对象的唯一标识。
+  - class属性:用来指定要创建的java类的类名，这个类名必须是全限定类名（包含包名
+
+- Spring是通过反射机制调用类的无参构造方法来创建对象的。
+
+### Spring6 启用Log4j2日志框架
+
+第一步：引入Log4j2的依赖
+```xml
+<!--log4j2的依赖-->
+<dependency>
+  <groupId>org.apache.logging.log4j</groupId>
+  <artifactId>log4j-core</artifactId>
+  <version>2.19.0</version>
+</dependency>
+<dependency>
+  <groupId>org.apache.logging.log4j</groupId>
+  <artifactId>log4j-slf4j2-impl</artifactId>
+  <version>2.19.0</version>
+</dependency>
+
+```
+第二步：在类的根路径下提供log4j2.xml配置文件（文件名固定为：log4j2.xml，文件必须放到类根路径下。）
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+
+    <loggers>
+        <!--
+            level指定日志级别，从低到高的优先级：
+                ALL < TRACE < DEBUG < INFO < WARN < ERROR < FATAL < OFF
+        -->
+        <root level="DEBUG">
+            <appender-ref ref="spring6log"/>
+        </root>
+    </loggers>
+
+    <appenders>
+        <!--输出日志信息到控制台-->
+        <console name="spring6log" target="SYSTEM_OUT">
+            <!--控制日志输出的格式-->
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss SSS} [%t] %-3level %logger{1024} - %msg%n"/>
+        </console>
+    </appenders>
+
+</configuration>
+
+```
+第三步：使用日志框架
+
+## 四、Spring对IoC的实现
+### IoC控制反转
+● 控制反转是一种思想。
+● 控制反转是为了降低程序耦合度，提高程序扩展力，达到OCP原则，达到DIP原则。
+● 控制反转，反转的是什么？
+  ○ 将对象的创建权利交出去，交给第三方容器负责。
+  ○ 将对象和对象之间关系的维护权交出去，交给第三方容器负责。
+● 控制反转这种思想如何实现呢？
+  ○ DI（Dependency Injection）：依赖注入
+### IoC依赖注入
+
+依赖注入实现了控制反转的思想。
+Spring通过依赖注入的方式来完成Bean管理的。
+Bean管理说的是：Bean对象的创建，以及Bean对象中属性的赋值（或者叫做Bean对象之间关系的维护）。
+依赖注入：
+● 依赖指的是对象和对象之间的关联关系。
+● 注入指的是一种数据传递行为，通过注入行为来让对象和对象产生关系。
+依赖注入常见的实现方式包括两种：
+● 第一种：set注入
+● 第二种：构造注入
+新建模块：spring6-002-dependency-injection
+
+
+
+
+
+
+
+
 
 ## 依赖注入
 
