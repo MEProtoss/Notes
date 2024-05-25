@@ -1,6 +1,8 @@
-2023/11/21 11:06:16
-
-# Spring
+---
+title: Spring6启示录
+date: 2024-05-06 16:41:30
+tags:
+---
 
 ## Spring启示录
 
@@ -9,8 +11,8 @@
 在软件开发过程中应当对扩展开放，对修改关闭
 
 ### 依赖倒置
-- Dependence Inversion Principle(DIP) 
 
+- Dependence Inversion Principle(DIP)
 - 要倡导面向抽象编程，面向接口编程，不要面向具体编程，让上层不再依赖下层，下面改动了，上面的代码不会受到牵连。这样可以大大降低程序的耦合度，耦合度低了，扩展力就强了，同时代码复用性也会增强。（软件七大开发原则都是在为解耦合服务）
 
 - Spring框架可以帮助我们创建对象，并且可以帮助我们维护对象和对象之间的关系
@@ -26,9 +28,11 @@
 - 控制反转常见的实现方式：依赖注入（Dependency Injection，简称DI。
 
 ## Spring概述
+
 spring = IOC + AOP(面向切面编程)
 
 ### Spring8大模块
+
 ### Spring 特点
 
 1. 轻量
@@ -995,4 +999,5 @@ getHandler是HandlerMapping接口中的唯一方法，用于根据请求找到�
 ### 模板方法模式
 
 Spring中的JdbcTemplate类就是一个模板类。它就是一个模板方法设计模式的体现。在模板类的模板方法execute中编写核心算法，具体的实现步骤在子类中完成。
+
 
