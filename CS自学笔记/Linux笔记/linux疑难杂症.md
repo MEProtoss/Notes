@@ -39,6 +39,33 @@ tail -n 200 /var/log/pacman.log | less
 # tail 命令将仅显示最后 10 条条目。因此，请将 200 替换为您自己的号码，以查看 pacman.log 文件。我将 "tail" 命令的输出通过管道传输到 "less" 命令以逐页显示结果。
 ```
 
+## linux配置开机免密码登录
+
+step1:
+
+```shell
+~ sudo nvim /etc/systemd/system/getty.target.wants/getty@tty1.service
+
+  ExecStart=-/sbin/agetty --autologin time --noclear %I $TERM
+
+```
+
+step2:
+
+```shell
+~ sudo visudo
+[用户名] ALL=(ALL:ALL) NOPASSWD: ALL
+
+用户提权
+yay -S polkit
+
+
+```
+
+## 可视化网络管理工具
+
+nm-connection-editor
+
 ## 一些好玩的小工具
 
 [终端玩具](https://arch.icekylin.online/guide/advanced/beauty-3.html#_2-zsh-%E7%BE%8E%E5%8C%96)
