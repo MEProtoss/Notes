@@ -1,16 +1,5 @@
 # neovim-tutorial
 
-### Open and Close Files
-
-| Mode | Shortcut | Description                          |
-| ---- | -------- | ------------------------------------ |
-| `n`  | `I`      | edit at the beginning of the line    |
-| `n`  | `A`      | edit at the end of the line          |
-|      |          |                                      |
-| `n`  | `:q!`    | Exit current buffer without saving   |
-| `n`  | `:qa!`   | Exit all open buffers without saving |
-| `n`  | `:wqa`   | Save and exit all open buffers       |
-
 ### motion
 
 | Mode     | Shortcut（快捷键）               | Description                                                                  |
@@ -193,16 +182,19 @@ tee 是一个可以从stdin接收输入并输出到文件的程序，这里后�
 
 强烈推荐这个小游戏Vim大冒险来学习vim！
 
-https://vim-adventures.com/
+<https://vim-adventures.com/>
 
-#大佬的文件看这里：
-https://github.com/MarsWang42/My-Vim-Conf
+# 大佬的文件看这里
 
-#VimAwesome网站：
-https://vimawesome.com/
+<https://github.com/MarsWang42/My-Vim-Conf>
 
-#Vim Plug Github页面：
-https://github.com/junegunn/vim-plug
+# VimAwesome网站
+
+<https://vimawesome.com/>
+
+# Vim Plug Github页面
+
+<https://github.com/junegunn/vim-plug>
 
 # 宏操作和多光标
 

@@ -13,4 +13,3 @@ mermaid: false
 | key | function |
 | ---- | ---- |
 |   ctrl + alt + m   |   将当前选取的部分封装成函数   |
-
